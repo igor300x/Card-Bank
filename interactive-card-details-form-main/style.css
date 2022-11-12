@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+:root {
+    --red: hsl(0, 100%, 66%);
+    --white: hsl(0, 0%, 100%);
+    --Light-grayish-violet: hsl(270, 3%, 87%);
+    --Dark-grayish-violet: hsl(279, 6%, 55%);
+    --Very-dark-violet: hsl(278, 68%, 11%);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.error {
+    border: 2px solid var(--red);
+}
+
+.error-message {
+    gap: 0;
+}
+
+.error-message::after {
+    content: "can't be blank";
+    color: var(--red);
+    margin-top: .2rem;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.left-section {
+    min-height: 100vh;
+    width: 40%;
+    background-image: url('./images/bg-main-desktop.png');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.cards {
+    position: absolute;
+    top: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    left: 100%;
+    transform: translate(-50%, -50%);
+}
+
+.front-card {
+    position: relative;
+    transform: translateX(-100px);
+}
+
+.card-logo {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+}
+
+#number {
+    position: absolute;
+    color: var(--white);
+    bottom: 5rem;
+    left: 1rem;
+    letter-spacing: 2px;
+}
+
+.card-info {
+    position: absolute;
+    bottom: 2rem;
+    left: 1rem;
+    right: 3rem;
+    display: flex;
+    color: var(--white);
+    justify-content: space-between;
+}
+
+.back-card {
+    position: relative;
+}
+
+#cvc {
+    position: absolute;
+    right: 3.5rem;
+    top: 7rem;
+    color: var(--Light-grayish-violet);
+}
+
+.right-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.right-section form {
+    display: grid;
+    gap: 1rem;
+    width: 350px;
+    grid-template-columns: repeat(1,2fr);
+    grid-template-rows: repeat(4,1fr); 
+}
+
+label {
+    color: var(--Very-dark-violet);
+    margin-bottom:.3rem;
+    text-transform: uppercase;
+}
+
+input {
+    padding: .5rem;
+    font-size: 18px;
+    border: 1px solid var(--Dark-grayish-violet);
+    border-radius: 6px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input::placeholder {
+    font-family: inherit;
+    color: var(--Dark-grayish-violet);
+}
+
+input:focus {
+    outline-color: hsl(249, 99%, 64%);
+}
+
+.grid-1 {
+    display: flex;
+    flex-direction: column;
+    grid-column: 2 span;
+}
+
+.grid-2 {
+    display: flex;
+    flex-direction: column;
+    grid-column: 2 span;
+}
+.grid-3{
+    display: flex;
+    flex-direction: column;
+}
+.grid-4 {
+    display: flex;
+    flex-direction: column;
+    grid-column: 1 span;
+}
+.card-information{
+    display: flex;
+    grid-column: 2 span;
+    gap: 1rem;
+    
+}
+#card-date{
+    display: flex;
+    flex-direction: column;
+    grid-column: 1 span;
+}
+#card-date .two-inp{
+    display: flex;}
+
+.two-inp div {flex-direction: column;}
+
+#card-date div input{
+    width: 70px;
+    margin-inline: .5rem;
+    margin-left: 0;
+}
+#card-cvc{width: 100%;}
+
+form button{
+    grid-column: 2 span;
+    font-size: 18px;
+    height: 50px;
+    color: var(--white);
+    border-radius: 6px;
+    border: var(--Very-dark-violet);
+    background-color: var(--Very-dark-violet);
+    cursor: pointer;
+}
+.thank{
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+.thank h1{
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+.thank p{
+    font-size: 18px;
+    color: var(--Dark-grayish-violet);
+}
+.thank button{
+    color: var(--white);
+    width: 100%;
+    border-radius: 6px;
+    padding: 1rem;
+    background-color: var(--Very-dark-violet);
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.attribution{
+    font-size: 18px; 
+    text-align: center;
+    padding: 5px;
+
+    height:40px ;
+    width: 100%;
+    background:linear-gradient(30deg, rgb(35, 1, 51),hsl(278, 68%, 11%),#3CAD9E);
+}
+a{
+    text-decoration: none;
+    color: bisque;
+    outline: none;
+    cursor: pointer;
+}
+/* <div class="attribution">
+  Coded by <a href="https://github.com/igor300x" target="_blank" >Igor Jorge</a>.
+</div> */
+
+@media screen and (max-width:1024px) {
+    
+    .front-card,.front-card img,.back-card,.back-card img{
+        width: 300px;
+    }
+    .card-container .card-logo{
+        width: 50px;
+    }
+    #number{
+        font-size: 1.1rem;
+    }
+    #cvc{
+        top: 42%;
+        right: 12%;
+    }
+    .attribution{
+        margin-top: 20px   
+     }
+    
+}
+@media screen and (max-width:768px) {
+    .container{
+        flex-direction: column;
+    }
+    .front-card,.front-card img,.back-card,.back-card img{
+        width: 250px;
+      }  
+      .left-section{
+        width: 100%;
+        min-height: 30vh;
+        background-image: url('./images/bg-main-mobile.png');
+    }  
+    .cards{
+        flex-direction: column-reverse;
+        left: 61%;
+        top: 60%;
+        gap: 0;
+    }
+    .back-card{
+        transform: translateY(70px);
+    }
+    .front-card{
+        z-index: 100;
+    }
+    .right-section{margin-top: 6rem;}
+    
+    .attribution{
+        margin-top: 20px   
+     }
+
+}
